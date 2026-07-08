@@ -7,21 +7,18 @@
 <meta name="description" content="Haley Eidem, PhD — data storyteller, quantitative researcher, and designer. Equal parts researcher and artist.">
 <meta property="og:title" content="Haley Eidem — Data Storyteller">
 <meta property="og:description" content="Equal parts researcher and artist. I find meaning in messy data and design beautiful ways for people to learn.">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='30' cy='70' r='10' fill='%23FF48B0'/%3E%3Ccircle cx='52' cy='42' r='10' fill='%230078BF'/%3E%3Ccircle cx='74' cy='58' r='10' fill='%23FFB511'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='38' cy='56' r='13' fill='%230078BF'/%3E%3Ccircle cx='66' cy='48' r='13' fill='%23FF48B0'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Hanken+Grotesk:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
-  /* riso-print palette: fluorescent inks on warm white */
+  /* two inks on warm white — blue is the researcher, pink is the artist */
   --paper:#FFFEFA;
   --ink:#181817;
   --ink-soft:#55524A;
   --pink:#FF48B0;
   --blue:#0078BF;
-  --green:#00A95C;
-  --yellow:#FFB511;
-  --orange:#FF6C2F;
   --rule:#E8E4DA;
   --card:#ffffff;
   --serif:"Fraunces", Georgia, serif;
@@ -39,10 +36,10 @@ body{
   -webkit-font-smoothing:antialiased;
 }
 ::selection{background:var(--pink);color:#fff}
-/* riso ink stripe */
+/* two inks, two halves: researcher | artist */
 body::before{
-  content:"";display:block;height:6px;
-  background:linear-gradient(90deg,var(--pink) 0 25%,var(--yellow) 0 50%,var(--blue) 0 75%,var(--green) 0 100%);
+  content:"";display:block;height:4px;
+  background:linear-gradient(90deg,var(--blue) 0 50%,var(--pink) 0 100%);
 }
 a{color:inherit}
 .wrap{max-width:1060px;margin:0 auto;padding:0 24px}
@@ -53,7 +50,7 @@ a{color:inherit}
   font-size:12px;
   letter-spacing:.08em;
   text-transform:uppercase;
-  color:var(--pink);
+  color:var(--ink-soft);
   display:flex;align-items:center;gap:12px;
 }
 .fig::after{content:"";flex:1;border-top:1px dotted var(--rule)}
@@ -85,8 +82,8 @@ h1{
   line-height:1.04;letter-spacing:-.015em;
   max-width:15ch;
 }
-h1 em{font-style:italic;color:var(--pink)}
-h1 .pine{color:var(--blue);font-style:italic}
+h1 em{font-style:italic;color:var(--blue)}   /* the researcher */
+h1 .pine{color:var(--pink);font-style:italic} /* the artist */
 .hero p.lede{
   margin-top:34px;max-width:56ch;font-size:20px;font-weight:300;color:var(--ink-soft);
 }
@@ -103,7 +100,7 @@ h2{
   font-family:var(--serif);font-weight:400;font-size:clamp(30px,4vw,44px);
   letter-spacing:-.01em;margin-top:14px;
 }
-h2 em{font-style:italic;color:var(--pink)}
+h2 em{font-style:italic}
 
 /* ---------- case studies ---------- */
 .case{
@@ -114,14 +111,10 @@ h2 em{font-style:italic;color:var(--pink)}
 .case.flip .case-visual{order:2}
 .case-meta{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--ink-soft);display:flex;gap:18px;flex-wrap:wrap;margin-bottom:16px}
 .case-meta .num{font-weight:500}
-/* each project gets its own ink */
-.case:nth-of-type(1){--accent:var(--blue)}
-.case:nth-of-type(2){--accent:var(--pink)}
-.case:nth-of-type(3){--accent:var(--green)}
-.case:nth-of-type(4){--accent:var(--orange)}
+/* color = meaning: blue for professional work, pink for personal work */
+.case:nth-of-type(1),.case:nth-of-type(2){--accent:var(--blue)}
+.case:nth-of-type(3),.case:nth-of-type(4){--accent:var(--pink)}
 .case .num{color:var(--accent)}
-.case h3{border-bottom:3px solid var(--accent);display:inline-block;padding-bottom:6px}
-.case .tags span{border-color:color-mix(in srgb, var(--accent) 45%, white)}
 h3{font-family:var(--serif);font-weight:500;font-size:30px;letter-spacing:-.01em;margin-bottom:16px}
 .case p{color:var(--ink-soft);margin-bottom:14px}
 .case p b{color:var(--ink);font-weight:500}
@@ -142,8 +135,8 @@ h3{font-family:var(--serif);font-weight:500;font-size:30px;letter-spacing:-.01em
   transition:transform .35s ease, box-shadow .35s ease;
 }
 .case-visual:hover .visual-frame{
-  transform:translateY(-6px) rotate(-.4deg);
-  box-shadow:0 18px 44px color-mix(in srgb, var(--accent, var(--ink)) 16%, transparent);
+  transform:translateY(-6px);
+  box-shadow:0 18px 44px rgba(24,24,23,.10);
 }
 .visual-frame svg{display:block;width:100%;height:auto}
 .visual-cap{font-family:var(--mono);font-size:11px;color:var(--ink-soft);margin-top:14px;line-height:1.5}
@@ -152,14 +145,13 @@ h3{font-family:var(--serif);font-weight:500;font-size:30px;letter-spacing:-.01em
 /* in-progress case study stubs */
 .stubs{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;margin-top:56px}
 .stub{
-  border:2px dashed color-mix(in srgb, var(--accent) 50%, white);
+  border:2px dashed var(--rule);
   border-radius:12px;padding:26px;position:relative;
   transition:border-color .25s, transform .25s;
 }
-.stub:nth-child(1){--accent:var(--pink)}
-.stub:nth-child(2){--accent:var(--blue)}
-.stub:nth-child(3){--accent:var(--orange)}
-.stub:nth-child(4){--accent:var(--green)}
+/* same semantics: 05/06/08 professional (blue), 07 personal art practice (pink) */
+.stub{--accent:var(--blue)}
+.stub:nth-child(3){--accent:var(--pink)}
 .stub:hover{border-color:var(--accent);transform:translateY(-3px)}
 .stub .num{font-family:var(--mono);font-size:12px;letter-spacing:.06em;color:var(--accent);font-weight:500}
 .stub h3{font-size:22px;margin:10px 0 8px;border:none;padding:0}
@@ -190,7 +182,7 @@ h3{font-family:var(--serif);font-weight:500;font-size:30px;letter-spacing:-.01em
 .about-grid p{margin-bottom:18px;color:var(--ink-soft)}
 .about-grid p b{color:var(--ink);font-weight:500}
 .aside-card{border:1px solid var(--rule);border-radius:10px;padding:26px;background:var(--card)}
-.aside-card h4{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--pink);margin-bottom:14px}
+.aside-card h4{font-family:var(--mono);font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-soft);margin-bottom:14px}
 .aside-card ul{list-style:none}
 .aside-card li{padding:9px 0;border-bottom:1px dotted var(--rule);font-size:15px}
 .aside-card li:last-child{border-bottom:none}
@@ -210,12 +202,9 @@ footer h2{max-width:20ch}
 .contact-links{margin-top:40px;display:flex;gap:34px;flex-wrap:wrap}
 .contact-links a{
   font-family:var(--mono);font-size:14px;text-decoration:none;color:var(--ink);
-  border-bottom:3px solid var(--yellow);padding-bottom:3px;transition:background .2s;
+  border-bottom:2px solid var(--blue);padding-bottom:3px;transition:color .2s, border-color .2s;
 }
-.contact-links a:nth-child(1){border-color:var(--pink)}
-.contact-links a:nth-child(2){border-color:var(--blue)}
-.contact-links a:nth-child(3){border-color:var(--green)}
-.contact-links a:hover{background:var(--yellow)}
+.contact-links a:hover{color:var(--pink);border-color:var(--pink)}
 .colophon{margin-top:70px;font-family:var(--mono);font-size:11.5px;color:var(--ink-soft);line-height:1.8}
 
 /* ---------- reveal animation ---------- */
@@ -303,12 +292,12 @@ footer h2{max-width:20ch}
               <stop offset="1" stop-color="#0078BF" stop-opacity=".65"/>
             </linearGradient>
             <linearGradient id="g2" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#FF48B0" stop-opacity=".12"/>
-              <stop offset="1" stop-color="#FF48B0" stop-opacity=".6"/>
+              <stop offset="0" stop-color="#1D4E6B" stop-opacity=".12"/>
+              <stop offset="1" stop-color="#1D4E6B" stop-opacity=".6"/>
             </linearGradient>
             <linearGradient id="g3" x1="0" y1="0" x2="1" y2="0">
-              <stop offset="0" stop-color="#FFB511" stop-opacity=".14"/>
-              <stop offset="1" stop-color="#FFB511" stop-opacity=".55"/>
+              <stop offset="0" stop-color="#85BCDF" stop-opacity=".2"/>
+              <stop offset="1" stop-color="#85BCDF" stop-opacity=".7"/>
             </linearGradient>
           </defs>
           <path d="M10,150 C90,150 120,70 220,62 C320,54 360,40 450,34 L450,66 C360,74 320,86 220,96 C120,106 90,150 10,150 Z" fill="url(#g1)"/>
@@ -357,14 +346,14 @@ footer h2{max-width:20ch}
           <g>
             <rect x="24" y="22" width="250" height="256" rx="6" fill="#ffffff" stroke="#E8E4DA"/>
             <rect x="44" y="44" width="150" height="10" rx="3" fill="#181817" opacity=".85"/>
-            <rect x="44" y="62" width="90" height="7" rx="3" fill="#FF48B0" opacity=".6"/>
+            <rect x="44" y="62" width="90" height="7" rx="3" fill="#85BCDF" opacity=".8"/>
             <rect x="44" y="86" width="210" height="4" rx="2" fill="#E8E4DA"/>
             <rect x="44" y="97" width="196" height="4" rx="2" fill="#E8E4DA"/>
             <rect x="44" y="108" width="204" height="4" rx="2" fill="#E8E4DA"/>
             <!-- embedded live chart -->
             <rect x="44" y="128" width="210" height="86" rx="4" fill="#FFFEFA" stroke="#E8E4DA"/>
             <polyline points="56,196 86,182 116,188 146,164 176,170 206,148 240,140" fill="none" stroke="#0078BF" stroke-width="2.5" stroke-linecap="round"/>
-            <circle cx="240" cy="140" r="3.5" fill="#FF48B0"/>
+            <circle cx="240" cy="140" r="3.5" fill="#0078BF"/>
             <text x="56" y="146" font-family="JetBrains Mono, monospace" font-size="8.5" fill="#55524A">live · snowflake</text>
             <rect x="44" y="228" width="210" height="4" rx="2" fill="#E8E4DA"/>
             <rect x="44" y="239" width="180" height="4" rx="2" fill="#E8E4DA"/>
@@ -375,7 +364,7 @@ footer h2{max-width:20ch}
             <g transform="rotate(3 318 152)">
               <rect x="220" y="72" width="120" height="9" rx="3" fill="#181817" opacity=".85"/>
               <rect x="220" y="94" width="196" height="60" rx="4" fill="#FFFEFA" stroke="#E8E4DA"/>
-              <g fill="#FFB511" opacity=".85">
+              <g fill="#85BCDF" opacity=".9">
                 <rect x="232" y="128" width="14" height="18" rx="2"/>
                 <rect x="252" y="118" width="14" height="28" rx="2"/>
                 <rect x="272" y="108" width="14" height="38" rx="2"/>
@@ -386,7 +375,7 @@ footer h2{max-width:20ch}
               <rect x="220" y="168" width="196" height="4" rx="2" fill="#E8E4DA"/>
               <rect x="220" y="179" width="170" height="4" rx="2" fill="#E8E4DA"/>
               <rect x="220" y="190" width="184" height="4" rx="2" fill="#E8E4DA"/>
-              <rect x="220" y="214" width="90" height="7" rx="3" fill="#0078BF" opacity=".7"/>
+              <rect x="220" y="214" width="90" height="7" rx="3" fill="#1D4E6B" opacity=".55"/>
             </g>
           </g>
         </svg>
@@ -574,23 +563,24 @@ footer h2{max-width:20ch}
         <line x1="793" y1="20" x2="793" y2="305"/>
       </g>
       <!-- St. Olaf 2007-2010 -->
-      <rect class="tl-band" x="60" y="34" width="151" height="16" fill="#FFB511" opacity=".8"/>
+      <rect class="tl-band" x="60" y="34" width="151" height="16" fill="#55524A" opacity=".35"/>
       <text class="tl-name" x="60" y="26">St. Olaf College</text>
       <text class="tl-role" x="220" y="47">BA, Biology</text>
       <!-- NIH 2010-2012 (incl JHU) -->
-      <rect class="tl-band" x="197" y="86" width="92" height="16" fill="#FF6C2F" opacity=".85"/>
+      <rect class="tl-band" x="197" y="86" width="92" height="16" fill="#55524A" opacity=".45"/>
       <text class="tl-name" x="197" y="78">NIH · Johns Hopkins</text>
       <text class="tl-role" x="298" y="99">Genomics fellow → genetic counseling</text>
       <!-- Vanderbilt 2012-2018 -->
-      <rect class="tl-band" x="289" y="138" width="275" height="16" fill="#FF48B0" opacity=".85"/>
+      <rect class="tl-band" x="289" y="138" width="275" height="16" fill="#55524A" opacity=".55"/>
       <text class="tl-name" x="289" y="130">Vanderbilt University</text>
       <text class="tl-role" x="573" y="151">PhD, Computational Genomics</text>
       <!-- Google 2018-2025 -->
-      <rect class="tl-band" x="564" y="190" width="343" height="16" fill="#0078BF" opacity=".9"/>
+      <rect class="tl-band" x="564" y="190" width="343" height="16" fill="#55524A" opacity=".7"/>
       <text class="tl-name" x="564" y="182">Google</text>
       <text class="tl-role" x="640" y="182">Quantitative UX Researcher, Google Cloud</text>
       <!-- DigitalOcean 2026- -->
-      <rect class="tl-band" x="907" y="242" width="23" height="16" fill="#00A95C"/>
+      <rect class="tl-band" x="907" y="242" width="23" height="16" fill="#0078BF"/>
+      <text class="tl-label" x="930" y="272" text-anchor="end" fill="#0078BF">← now</text>
       <text class="tl-name" x="905" y="234" text-anchor="end">DigitalOcean</text>
       <text class="tl-role" x="905" y="253" text-anchor="end">Senior Quant UXR &amp; Product Manager →</text>
       <!-- annotation -->
