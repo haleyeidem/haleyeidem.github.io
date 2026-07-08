@@ -129,9 +129,10 @@ h3{font-family:var(--serif);font-weight:500;font-size:30px;letter-spacing:-.01em
 .visual-frame img.cover{display:block;width:100%;border-radius:6px;border:1px solid var(--rule)}
 
 /* dills screenshot slots */
-.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.shot{position:relative;aspect-ratio:9/19;border-radius:14px;overflow:hidden;border:1px solid var(--rule);background:#f4f0e8}
-.shot img{width:100%;height:100%;object-fit:cover;display:block}
+.shots{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;align-items:start}
+.shot{position:relative;border-radius:14px;overflow:hidden;border:1px solid var(--rule);background:#f4f0e8}
+.shot img{width:100%;height:auto;display:block}
+.shot.missing{aspect-ratio:9/16}
 .shot.missing img{display:none}
 .shot.missing::after{
   content:"drop " attr(data-file) " into /assets";
@@ -406,8 +407,8 @@ footer h2{max-width:20ch}
       <div class="visual-frame">
         <div class="shots">
           <figure class="shot" data-file="dills-01.png"><img src="assets/dills-01.png" alt="Dill's Litter Log — home tab with status card and scatter chart" onerror="this.parentElement.classList.add('missing')"></figure>
-          <figure class="shot" data-file="dills-02.png"><img src="assets/dills-02.png" alt="Dill's Litter Log — analytics heatmap" onerror="this.parentElement.classList.add('missing')"></figure>
-          <figure class="shot" data-file="dills-03.png"><img src="assets/dills-03.png" alt="Dill's Litter Log — trends and anomaly flags" onerror="this.parentElement.classList.add('missing')"></figure>
+          <figure class="shot" data-file="dills-02.png"><img src="assets/dills-02.png" alt="Dill's Litter Log — 24-hour by 7-day activity heatmap" onerror="this.parentElement.classList.add('missing')"></figure>
+          <figure class="shot" data-file="dills-03.png"><img src="assets/dills-03.png" alt="Dill's Litter Log — anomaly flags with alert and warning days" onerror="this.parentElement.classList.add('missing')"></figure>
         </div>
         <p class="visual-cap">Private app (Dill's medical records are his own business) — screenshots only.</p>
       </div>
