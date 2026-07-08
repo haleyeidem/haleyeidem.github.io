@@ -10,13 +10,14 @@ One hand-written `index.html` — no framework, no build step. Fonts from Google
 
 ## Adding the Dill's Litter Log screenshots
 
-Drop three phone screenshots into `assets/` named exactly:
+Four screenshots live in `assets/`, shown as a two-column collage:
 
 - `assets/dills-01.png` — home tab (status card + scatter chart)
-- `assets/dills-02.png` — analytics heatmap
-- `assets/dills-03.png` — trends / anomaly flags
+- `assets/dills-02.png` — activity heatmap
+- `assets/dills-03.png` — rolling trends
+- `assets/dills-04.png` — gap analysis
 
-The site shows dashed placeholders until the files exist. Any aspect ratio works; they're cropped to a phone frame.
+To swap one, replace the file (keep the name) and refresh. Any width works; height is natural.
 
 ## Editing
 

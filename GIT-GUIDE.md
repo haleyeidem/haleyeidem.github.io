@@ -13,9 +13,10 @@ Because the folder is named `haleyeidem.github.io`, GitHub treats it as your **u
 
 ```bash
 cd ~/Projects/haleyeidem.github.io
-git remote add origin https://github.com/haleyeidem/haleyeidem.github.io.git
 git push -u origin main
 ```
+
+The remote is already configured over **SSH** (`git@github.com:...`), same as your other repos — it authenticates with your Mac's SSH key, no password prompts. (HTTPS remotes are the ones that ask for a username/token; GitHub retired password auth for those in 2021.)
 
 5. Wait ~1 minute. Your site is live at https://haleyeidem.github.io/
 
